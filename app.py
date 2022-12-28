@@ -54,6 +54,17 @@ def deleting(ComName):
 def showall():
     return jsonify(Jobs.objects.all())
 
+#Filter
+
+@app.route("/Job/<jr>")
+def getByJobRole(jr):
+    return jsonify(Jobs.objects(JobRole=jr))
+
+@app.route("/Sale/<rup>")
+def getBySalery(rup):
+    return jsonify(Jobs.objects(Salery=rup))
+
+
 @app.route("/qual/<quali>")
 def getByQualification(quali):
     return jsonify(Jobs.objects(Qualification=quali))
