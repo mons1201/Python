@@ -60,7 +60,7 @@ def showall():
 def getByJobRole(jr):
     return jsonify(Jobs.objects(JobRole=jr))
 
-@app.route("/Sale/<rup>")
+@app.route("/Sale/<int:rup>")
 def getBySalery(rup):
     return jsonify(Jobs.objects(Salery=rup))
 
